@@ -12,11 +12,11 @@ interface TextProps {
 
 gsap.registerPlugin(SplitText)
 
-export const Text = ({children, animateOnScroll, delay}:TextProps) => {
-    const containerRef = useRef(null);
-    const elementRef = useRef([]);
-    const splitRef = useRef([]);
-    const lines = useRef([]);
+export const Text = ({children, animateOnScroll=false, delay=0}:TextProps) => {
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const elementRef = useRef<HTMLElement[]>([]);
+    const splitRef = useRef<SplitText[]>([]);
+    const lines = useRef<HTMLElement[]>([]);
 
     useGSAP(() => {
         if (!containerRef.current) return
@@ -25,9 +25,9 @@ export const Text = ({children, animateOnScroll, delay}:TextProps) => {
         elementRef.current = [];
         lines.current = [];
 
-        let elements = []
+        let elements: HTMLElement[] = [];
         if(containerRef.current.hasAttribute("data-copy-wrapper")) {
-            elements = Array.from(containerRef.current.children);
+            elements = Array.from(containerRef.current.children)  as HTMLElement[];
         } else {
             elements = [containerRef.current];
         }
@@ -49,11 +49,12 @@ export const Text = ({children, animateOnScroll, delay}:TextProps) => {
 
             if (textIndent && textIndent !== "0px") {
                 if(split.lines.length > 0) {
-                    split.lines[0].style.paddingLeft = textIndent;
+                   ( split.lines[0] as HTMLElement).style.paddingLeft = textIndent;
                 }
                 element.style.textIndent = "0";
             }
 
+            // @ts-ignore
             lines.current.push(...split.lines);
         });
 
@@ -92,7 +93,8 @@ export const Text = ({children, animateOnScroll, delay}:TextProps) => {
         dependencies: [animateOnScroll, delay]
     })
 
-    if(React.Children.count(children) === 1){
+    if(React.Children.count(children) === 1 && React.isValidElement(children)){
+        // @ts-ignore
         return React.cloneElement(children, {ref: containerRef})
     }
 
