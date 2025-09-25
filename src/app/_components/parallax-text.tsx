@@ -27,7 +27,7 @@ export default function ParallaxText({ baseVelocity = -5 }) {
 
     const directionFactor = useRef(1);
 
-    useAnimationFrame((t, delta) => {
+    useAnimationFrame((_, delta) => {
         let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
         /**
@@ -62,7 +62,7 @@ export function DisplayText() {
             <div className=" flex flex-nowrap whitespace-nowrap items-center gap-x-4">
                 <h1 className="text-[9rem] leading-[1] space-x-2 block">
                     <span className=" font-cabinet uppercase">Experimental</span>
-                    <span className=" font-fraunces">[newYear]</span>
+                    <span className=" font-fraunces">[{newYear}]</span>
                 </h1>
                 <div className="animate-spin duration-75 ease-linear infinite">
                     <svg
