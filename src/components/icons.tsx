@@ -1,5 +1,4 @@
 import type {SVGProps} from "react";
-import {motion} from "framer-motion";
 
 export const icons = {
     logo: (props: SVGProps<any>) => (
