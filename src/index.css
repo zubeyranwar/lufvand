@@ -1,27 +1,46 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Nimbus Sans';
-  font-weight: 400;
-  src: url('/fonts/nimbus-sans-d-ot-400.woff2') format('woff2');
+    font-family: 'Nimbus Sans';
+    font-weight: 400;
+    src: url('public/fonts/nimbus-sans-d-ot-400.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Nimbus Sans';
+    font-weight: 700;
+    src: url('public/fonts/nimbus-sans-d-ot-700.woff2') format('woff2');
 }
 
 :root {
-  font-family: 'Nimbus Sans', Helvetica, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Nimbus Sans', Helvetica, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 :root, html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+h1, h2, h3, h5, h6 {
+    line-height: 1;
+    letter-spacing: -0.01em;
+}
+
+p, span, a {
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+}
+
+.line {
+    transform: translateY(100%);
+    will-change: transform;
+}
+
 
