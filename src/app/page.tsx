@@ -86,7 +86,6 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-            {/*<FeaturedProduct/>*/}
             <ParallaxText />
         </main>
     );

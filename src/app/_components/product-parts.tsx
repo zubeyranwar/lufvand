@@ -113,7 +113,10 @@ export default function ProductParts() {
             </div>
 
             <video ref={videoRef} muted preload="auto" playsInline className="object-cover">
-                <source src="/assets/product-parts-showcase.mp4" type="video/mp4"/>
+                <source
+                    src="https://cdn.jsdelivr.net/gh/zubeyranwar/lufvand@main/public/assets/product-parts-showcase.mp4"
+                    type="video/mp4"
+                />
             </video>
         </div>
     );

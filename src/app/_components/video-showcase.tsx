@@ -81,7 +81,7 @@ export default function VideoShowcase() {
             </div>
 
             <video ref={videoRef} muted preload="auto" playsInline className="object-cover ">
-                <source src="/assets/lufvand-showcase.mp4" type="video/mp4"/>
+                <source src="https://cdn.jsdelivr.net/gh/zubeyranwar/lufvand@main/public/assets/lufvand-showcase.mp4" type="video/mp4"/>
             </video>
         </div>
     )
