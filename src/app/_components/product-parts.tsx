@@ -112,13 +112,7 @@ export default function ProductParts() {
                 </p>
             </div>
 
-            <video ref={videoRef} muted preload="auto" playsInline className="hidden md:block object-cover">
-                <source
-                    src="https://postevand-storage.fra1.cdn.digitaloceanspaces.com/mp4-2025/section-5-desktop-900-264-crf-20-g-1.mp4"
-                    type="video/mp4"
-                />
-            </video>
-            <video ref={videoRef} muted preload="auto" playsInline className="block md:hidden object-cover">
+            <video ref={videoRef} muted preload="auto" playsInline className="object-cover">
                 <source
                     src="https://postevand-storage.fra1.cdn.digitaloceanspaces.com/mp4-2025/section-3-desktop-900-264-crf-20-g-1.mp4"
                     type="video/mp4"
